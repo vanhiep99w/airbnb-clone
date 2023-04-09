@@ -22,7 +22,8 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       className={`
-        relative w-full rounded-lg transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-70 
+        relative w-full rounded-lg transition hover:opacity-80 
+        disabled:cursor-not-allowed disabled:opacity-70 
         ${
           outline
             ? "border-black text-black"

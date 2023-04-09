@@ -1,12 +1,8 @@
 import { Nunito } from "next/font/google";
-import { PropsWithChildren, ReactElement } from "react";
+import { PropsWithChildren } from "react";
 import Navbar from "@/components/navbar";
-import Modal from "@/components/modals";
-
-export const metadata = {
-  title: "Airbnb",
-  description: "Airbnb clone"
-};
+import { RegisterModal } from "@/components/modals";
+import { ToasterProvider } from "../../providers";
 
 const font = Nunito({
   subsets: ["latin"]
@@ -15,13 +11,8 @@ const font = Nunito({
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <main className={font.className}>
-      <Modal
-        isOpen
-        title="Hello"
-        actionLabel="Submit"
-        onClose={() => {}}
-        onSubmit={() => {}}
-      />
+      <ToasterProvider />
+      <RegisterModal />
       <Navbar />
       {children}
     </main>
